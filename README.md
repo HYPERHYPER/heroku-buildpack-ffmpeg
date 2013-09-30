@@ -4,20 +4,15 @@ Heroku buildpack for ffmpeg
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using [ffmpeg](http://www.ffmpeg.org/) in your project.  
 It doesn't do anything else, so to actually compile your app you should use [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) to combine it with a real buildpack.
 
-This version of ffmpeg was built with the following config options:
+This is a static build of ffmpeg:
 
-    ./configure --enable-shared \
+    ./configure --enable-static \
+    --disable-shared \
     --disable-asm \
-    --disable-filters \
-    --disable-muxers \
-    --disable-demuxers \
-    --disable-encoders \
-    --disable-decoders \
-    --enable-encoder=vorbis \
-    --enable-encoder=mpeg4 \
-    --enable-decoder=gif \
-    --enable-decoder=vorbis \
-    --enable-decoder=mpeg4 \
+    --enable-libtheora \
+    --enable-libvorbis \
+    --extra-libs=-static \
+    --extra-cflags=--static \
     --prefix=/app/vendor/ffmpeg
 
 Usage
