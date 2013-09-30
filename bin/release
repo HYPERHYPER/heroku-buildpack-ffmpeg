@@ -1,3 +1,2 @@
-config_vars:
-  PATH: "vendor/ffmpeg/bin:/usr/bin:/bin"
-  LD_LIBRARY_PATH: "vendor/ffmpeg/lib"
+#!/bin/sh
+echo "--- {}"
