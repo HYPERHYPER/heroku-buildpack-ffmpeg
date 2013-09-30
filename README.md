@@ -1,4 +1,4 @@
-Heroku buildpack: FFMpeg
+Heroku buildpack for ffmpeg
 =======================
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using [ffmpeg](http://www.ffmpeg.org/) in your project.  
@@ -26,7 +26,10 @@ To use this buildpack, you should prepare .buildpacks file that contains this bu
 
     $ cat .buildpacks
     https://github.com/HYPERHYPER/heroku-buildpack-ffmpeg.git
-    https://github.com/heroku/heroku-buildpack-ruby.git # this is for Rails, see https://github.com/heroku for other app types
+    https://github.com/heroku/heroku-buildpack-ruby.git 
+
+The first build pack is the git URL to this repo.
+The second build pack is for a Rails app, see [https://github.com/heroku](https://github.com/heroku) for other app build packs.
     
     $ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
 
