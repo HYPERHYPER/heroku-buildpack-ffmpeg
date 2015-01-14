@@ -20,5 +20,5 @@ curl -L --silent $DOWNLOAD_URL | tar xz
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:vendor/ffmpeg/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/ffmpeg/lib"' >> $PROFILE_PATH
+echo 'export PATH="/app/vendor/ffmpeg/bin:$PATH"' >> $PROFILE_PATH
+echo 'export LD_LIBRARY_PATH="/app/vendor/ffmpeg/lib:$LD_LIBRARY_PATH"' >> $PROFILE_PATH
